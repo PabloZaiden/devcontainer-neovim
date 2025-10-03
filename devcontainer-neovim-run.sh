@@ -3,6 +3,11 @@
 # This script starts neovim in a devcontainer environment.
 
 SOURCE_DIR="$(pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BUILD_SCRIPT="$SCRIPT_DIR/devcontainer-neovim-build.sh"
+
+# Run the build script to ensure the devcontainer is built and running
+bash "$BUILD_SCRIPT"
 
 COMMAND="nvim ."
 
